@@ -1,0 +1,202 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}   
+
+	<!-- Control buttons -->
+	<h2><b>Apply Filters</b></h2>
+<div id="myBtnContainer">
+	<button class="btn active" onclick="filterSelection('all')"> Show all</button>
+	<button class="btn" onclick="filterSelection('cars')"> Men</button>
+	<button class="btn" onclick="filterSelection('animals')"> Women</button>
+	<button class="btn" onclick="filterSelection('fruits')"> Kids</button>
+	<button class="btn" onclick="filterSelection('fruits')"> Beauty</button>
+	<button class="btn" onclick="filterSelection('fruits')"> Homeware</button>
+	<button class="btn" onclick="filterSelection('fruits')"> Collegeware</button>
+	<button class="btn" onclick="filterSelection('colors')"> Others</button>
+  </div>
+  
+  <!-- The filterable elements. Note that some have multiple class names (this can be used if they belong to multiple categories) -->
+	<br>
+
+<div class="row">
+
+
+<div class="col-lg-1">
+  <button class="w3-button w3-white w3-xlarge" onclick="w3_open()">&#9776;</button>
+  
+	<div class="w3-sidebar w3-bar-block w3-dark-grey w3-animate-left" style="display:none; position: absolute;" id="mySidebar">
+		<button class="w3-bar-item w3-button w3-large" onclick="w3_close()">&times;</button>
+
+        <div class="w3-dropdown-click">
+            <button onclick="toggleDropdown('categoriesDropdown1')" class="w3-button">Categories</button>
+            <div id="categoriesDropdown1" class="w3-dropdown-content w3-bar-block w3-card-4" style="display:none;">
+            <a href="#" class="w3-bar-item w3-button">
+            <input type="checkbox" id="category1">
+            <label for="category1">BOOTS</label>
+            </a>
+            <a href="#" class="w3-bar-item w3-button">
+            <input type="checkbox" id="category2">
+            <label for="category2">CASUAL SHOES</label>
+            </a>
+            <a href="#" class="w3-bar-item w3-button">
+                <input type="checkbox" id="category2">
+                <label for="category2">FLIP-FLOPS</label>
+            </a>
+            <a href="#" class="w3-bar-item w3-button">
+                <input type="checkbox" id="category2">
+                <label for="category2">FORMAL SHOES</label>
+            </a>
+            <a href="#" class="w3-bar-item w3-button">
+                <input type="checkbox" id="category2">
+                <label for="category2">SANDALS</label>
+            </a>
+            <a href="#" class="w3-bar-item w3-button">
+                <input type="checkbox" id="category2">
+                <label for="category2">SPORTS SHOES</label>
+            </a>
+        </div>
+    </div>
+
+        <div class="w3-dropdown-click">
+            <button onclick="toggleDropdown('categoriesDropdown2')" class="w3-button">BRANDS</button>
+            <div id="categoriesDropdown2" class="w3-dropdown-content w3-bar-block w3-card-4" style="display:none;">
+            <a href="#" class="w3-bar-item w3-button">
+            <input type="checkbox" id="category1">
+            <label for="category1">ADIDAS</label>
+            </a>
+            <a href="#" class="w3-bar-item w3-button">
+            <input type="checkbox" id="category2">
+            <label for="category2">CROCS</label>
+            </a>
+            <a href="#" class="w3-bar-item w3-button">
+                <input type="checkbox" id="category2">
+                <label for="category2">FILA</label>
+            </a>
+            <a href="#" class="w3-bar-item w3-button">
+                <input type="checkbox" id="category2">
+                <label for="category2">JORDAN</label>
+            </a>
+            <a href="#" class="w3-bar-item w3-button">
+                <input type="checkbox" id="category2">
+                <label for="category2">PUMA</label>
+            </a>
+            <a href="#" class="w3-bar-item w3-button">
+                <input type="checkbox" id="category2">
+                <label for="category2">US POLO</label>
+            </a>
+        </div>
+    </div>
+
+        <div class="w3-dropdown-click">
+            <button onclick="toggleDropdown('categoriesDropdown3')" class="w3-button">PRODUCT TYPE</button>
+            <div id="categoriesDropdown3" class="w3-dropdown-content w3-bar-block w3-card-4" style="display:none;">
+            <a href="#" class="w3-bar-item w3-button">
+            <input type="checkbox" id="category1">
+            <label for="category1">BOOTS</label>
+            </a>
+            <a href="#" class="w3-bar-item w3-button">
+            <input type="checkbox" id="category2">
+            <label for="category2">CASUAL SHOES</label>
+            </a>
+            <a href="#" class="w3-bar-item w3-button">
+                <input type="checkbox" id="category2">
+                <label for="category2">DERBY</label>
+            </a>
+            <a href="#" class="w3-bar-item w3-button">
+                <input type="checkbox" id="category2">
+                <label for="category2">FLIP FLOPS</label>
+            </a>
+            <a href="#" class="w3-bar-item w3-button">
+                <input type="checkbox" id="category2">
+                <label for="category2">LOAFERS</label>
+            </a>
+            <a href="#" class="w3-bar-item w3-button">
+                <input type="checkbox" id="category2">
+                <label for="category2">SANDALS</label>
+            </a>
+        </div>
+    </div>
+
+        <div class="w3-dropdown-click">
+            <button onclick="toggleDropdown('categoriesDropdown4')" class="w3-button">Colors</button>
+            <div id="categoriesDropdown4" class="w3-dropdown-content w3-bar-block w3-card-4" style="display:none;">
+            <a href="#" class="w3-bar-item w3-button">
+            <input type="checkbox" id="category1">
+            <label for="category1">BEIGE</label>
+            </a>
+            <a href="#" class="w3-bar-item w3-button">
+            <input type="checkbox" id="category2">
+            <label for="category2">BLACK</label>
+            </a>
+            <a href="#" class="w3-bar-item w3-button">
+                <input type="checkbox" id="category2">
+                <label for="category2">BLUE</label>
+            </a>
+            <a href="#" class="w3-bar-item w3-button">
+                <input type="checkbox" id="category2">
+                <label for="category2">GREY</label>
+            </a>
+            <a href="#" class="w3-bar-item w3-button">
+                <input type="checkbox" id="category2">
+                <label for="category2">WHITE</label>
+            </a>
+            <a href="#" class="w3-bar-item w3-button">
+                <input type="checkbox" id="category2">
+                <label for="category2">MULTI-COLOR</label>
+            </a> 
+        </div>  
+    </div>         
+
+</div>
+</div>
+<br>
+<div class="col-lg-11">
+
+	<div class="row">
+		{% for product in products %}
+		<div class="col-lg-4">
+			<img class="thumbnail" src="{{ product.imageURL }}">
+			<div class="box-element product">
+				<h6><strong>{{ product.name }}</strong></h6>
+				<hr>
+
+				<button data-product="{{ product.id }}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
+				
+				<a class="btn btn-outline-info" href="#">View</a>
+				<h4 style="display: inline-block; float: right"><strong>${{ product.price }}</strong></h4>
+
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+</div>
+
+
+    <script>
+		function w3_open() {
+			document.getElementById("mySidebar").style.display = "block";
+		}
+		function w3_close() {
+			document.getElementById("mySidebar").style.display = "none";
+		}
+
+        //dropdown adjustment
+        function toggleDropdown(dropdownId) {
+            var dropdown = document.getElementById(dropdownId);
+            if (dropdown.style.display === "none") {
+                dropdown.style.display = "block";
+            } else {
+                dropdown.style.display = "none";
+            }
+        }
+
+        // Adjust sidebar height
+    window.onload = function() {
+        adjustSidebarHeight();
+    };
+
+    window.onresize = function() {
+        adjustSidebarHeight();
+    };
+	</script>
+{% endblock content %}
